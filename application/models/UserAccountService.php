@@ -8,11 +8,22 @@ class UserAccountService extends CI_Model
 {
 	function __construct()
 	{
-		$this->load->model("UserAccountRepository");
+		$this->load->model("repositories/UserAccountRepository");
+		$this->load->model("schema/UserAccountSchema");
 	}
-	public function addUserAccount($userAccount)
+	public function addUserAccount($userAccountValueArray)
 	{
-		return $this->UserAccountRepository->addUserAccount($userAccount);
+		$usernameIsAvaible = $this->UserAccountRepository->UsernameIsAvaible($userAccountValueArray[$this->UserAccountSchema->Username]);
+		$emailIsUnique = $this->UserAccountRepository->EmailIsUnique($userAccountValueArray[$this->UserAccountSchema->Email]);
+
+		if ($usernameIsAvaible  && $emailIsUnique) {
+			return $this->UserAccountRepository->addUserAccount($userAccountValueArray);
+		} else {
+			return array(
+				$this->UserAccountSchema->Username => "Username is not avaible",
+				$this->UserAccountSchema->Email => "Email is already registered."
+			);
+		}
 	}
 	function deleteUserAccountById($userAccountId)
 	{
