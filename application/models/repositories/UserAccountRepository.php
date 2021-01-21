@@ -19,7 +19,7 @@ class UserAccountRepository extends CI_Model
 	}
 	public function createPasswordHash($plainTextPassword)
 	{
-		return hash($this->schema->Password_Hash, $plainTextPassword);
+		return hash($this->UserAccountSchema->Password_Hash, $plainTextPassword);
 	}
 	public function deleteUserAccountById($userAccountId)
 	{
