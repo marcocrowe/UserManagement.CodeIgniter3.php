@@ -40,8 +40,6 @@ class UserAccountRepository extends CI_Model
 			$this->UserAccountSchema->Username => $username,
 			$this->UserAccountSchema->Password => $this->createPasswordHash($password)
 		);
-		//$password = $this->createPasswordHash($password);
-		//$parameters = array( $username, $password);
 		$query = $this->db->get_where($this->UserAccessWebExampleSchema->UserAccount, $parameters);
 		return $query->row();
 	}
