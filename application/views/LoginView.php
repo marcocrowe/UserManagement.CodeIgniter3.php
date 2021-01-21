@@ -20,7 +20,7 @@ $this->load->model("schema/UserAccountSchema");
 
 			<label class="visually-hidden" for="inputEmail">Username</label>
 
-			<?php $usernameValue = isset($username) ? "" : 'value="$username"'; ?>
+			<?php $usernameValue = isset($username) ? 'value="' . $username . '"' : ""; ?>
 			<input autofocus class="form-control" id="<?php echo $this->UserAccountSchema->Username; ?>" name="<?php echo $this->UserAccountSchema->Username; ?>" placeholder="Email address" required type="text" <?php echo $usernameValue ?>>
 
 			<label class="visually-hidden" for="inputPassword">Password</label>
