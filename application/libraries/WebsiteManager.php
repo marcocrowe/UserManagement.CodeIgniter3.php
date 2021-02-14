@@ -50,9 +50,11 @@ class WebsiteManager
 		$this->codeIgniterReference->session->set_userdata(SessionUserDataKeys::Username, $username);
 	}
 	public function destroyCurrentUserSession()
-    {
-        $this->codeIgniterReference->session->sess_destroy();
-    }
+	{
+		$this->codeIgniterReference->session->set_userdata(SessionUserDataKeys::UserId, null);
+		$this->codeIgniterReference->session->set_userdata(SessionUserDataKeys::Username, null);
+		$this->codeIgniterReference->session->sess_destroy();
+	}
 	public function getSessionUsername()
 	{
 		if (isset($this->codeIgniterReference->session->userdata[SessionUserDataKeys::Username]))
