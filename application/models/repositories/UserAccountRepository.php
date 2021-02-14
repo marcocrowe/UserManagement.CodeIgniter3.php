@@ -14,8 +14,12 @@ class UserAccountRepository extends CI_Model
 	}
 	public function addUserAccount($userAccountValueArray)
 	{
+		//$commandText = "CALL CreateUserAccount(?, ?, ?, ?, ?)";
+		//return $this->db->query($commandText, $userAccountValueArray);
+
 		$this->db->insert($this->UserAccessWebExampleSchema->UserAccount, $userAccountValueArray);
-		return $this->db->affected_rows() == 1;
+		$insert_id = $this->db->insert_id();
+		return $this->getUserAccountById($insert_id);
 	}
 	public function createPasswordHash($plainTextPassword)
 	{
