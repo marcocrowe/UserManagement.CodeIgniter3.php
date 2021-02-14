@@ -1,7 +1,6 @@
 <?php $this->load->helper("url"); ?>
-<main class="form-signin">
+<main class="form-signin" style="width: 400px;">
 	<form action="<?php echo base_url(); ?>index.php/login/manage/" method="post">
-		<img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
 		<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
 		<label class="visually-hidden" for="inputEmail">Username</label>

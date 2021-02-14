@@ -9,7 +9,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="margin:auto; width: 800px;">
 	<header>
 		<h1><a href="<?php echo base_url(); ?>">User Management Example</a></h1>
 		<?php if (isset($loggedIn) && $loggedIn) {  ?>
@@ -50,7 +50,8 @@
 	</header>
 	<?php echo $mainContent; ?>
 	<footer>
-		Copyright &#169; 2020 Mark Crowe <a href="https://github.com/markcrowe-com">https://github.com/markcrowe-com</a>. All rights reserved.
+		<hr/>
+		<p>Copyright &#169; 2020 Mark Crowe <a href="https://github.com/markcrowe-com">https://github.com/markcrowe-com</a>. All rights reserved.</p>
 	</footer>
 </body>
 
