@@ -6,10 +6,10 @@
 	<title><?php echo $pageTitle; ?></title>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
 </head>
 
-<body style="margin:auto; width: 800px;">
+<body style="margin:auto; width: 900px;">
 	<header>
 		<h1><a href="<?php echo base_url(); ?>">User Management Example</a></h1>
 		<?php if (isset($loggedIn) && $loggedIn) {  ?>
@@ -50,8 +50,7 @@
 	</header>
 	<?php echo $mainContent; ?>
 	<footer>
-		<hr />
-		<p>Copyright &#169; 2020 Mark Crowe <a href="https://github.com/markcrowe-com">https://github.com/markcrowe-com</a>. All rights reserved.</p>
+		<p class="mt-5 mb-3 text-muted">Copyright &copy; 2021 Mark Crowe <a href="https://github.com/markcrowe-com">https://github.com/markcrowe-com</a>. All rights reserved.</p>
 	</footer>
 </body>
 
