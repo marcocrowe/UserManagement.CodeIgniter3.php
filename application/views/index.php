@@ -50,7 +50,7 @@
 	</header>
 	<?php echo $mainContent; ?>
 	<footer>
-		<hr/>
+		<hr />
 		<p>Copyright &#169; 2020 Mark Crowe <a href="https://github.com/markcrowe-com">https://github.com/markcrowe-com</a>. All rights reserved.</p>
 	</footer>
 </body>
