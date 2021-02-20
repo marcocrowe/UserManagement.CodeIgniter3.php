@@ -26,6 +26,9 @@
 							<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
+							<a class="nav-link" href="<?php echo site_url('products/'); ?>">Products</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="<?php echo site_url('useraccounts/'); ?>">User Accounts</a>
 						</li>
 						<li class="nav-item">
