@@ -12,6 +12,7 @@
 <body style="margin:auto; width: 900px;">
 	<header>
 		<h1><a href="<?php echo base_url(); ?>">User Management Example</a></h1>
+		<div style="float: right;"><a href="<?php echo site_url("adminlogin/"); ?>"><img width="100px" height="40px" src="<?php echo base_url() ;?>src/images/transparentpixel.png" alt="Admin Login" /></a></div>
 		<?php if (isset($loggedIn) && $loggedIn) {  ?>
 			<div>Logged in as: <?php echo $username ?></div>
 		<?php } ?>

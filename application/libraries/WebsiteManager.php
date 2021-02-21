@@ -34,6 +34,15 @@ class WebsiteManager
 	{
 		return $this->codeIgniterReference->session->userdata("CustomerId") == null;
 	}
+	public function loadViewWithAdminMasterPage($pageTitle, $viewName, $viewVars = null)
+	{
+		$vars = array(
+			'mainContent' => $this->codeIgniterReference->load->view($viewName, $viewVars, true),
+			'pageTitle' => $pageTitle,
+			"username" => $this->getSessionUsername(),
+		);
+		$this->codeIgniterReference->load->view("AdminMasterPage", $vars);
+	}
 	public function loadViewWithMasterPage($pageTitle, $viewName, $viewVars = null)
 	{
 		$vars = array(
