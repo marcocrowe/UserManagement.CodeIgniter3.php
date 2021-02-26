@@ -12,7 +12,6 @@
 <body style="margin:auto; width: 900px;">
 	<header>
 		<h1><a href="<?php echo base_url(); ?>">User Management Example</a></h1>
-		<div style="float: right;"><a href="<?php echo site_url("adminlogin/"); ?>"><img width="100px" height="40px" src="<?php echo base_url() ;?>src/images/transparentpixel.png" alt="Admin Login" /></a></div>
 		<?php if (isset($loggedIn) && $loggedIn) {  ?>
 			<div>Logged in as: <?php echo $username ?></div>
 		<?php } ?>
@@ -27,23 +26,14 @@
 							<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="<?php echo site_url('products/'); ?>">Products</a>
+							<a class="nav-link" href="<?php echo site_url('admin/products/'); ?>">Products</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="<?php echo site_url('shoppingcart/'); ?>">Cart</a>
+							<a class="nav-link" href="<?php echo site_url('admin/useraccounts/'); ?>">User Accounts</a>
 						</li>
-						<?php if (isset($loggedIn) && $loggedIn) {  ?>
-							<li class="nav-item">
-								<a class="nav-link" href="<?php echo site_url("logout/"); ?>">Logout</a>
-							</li>
-						<?php } else {  ?>
-							<li class="nav-item">
-								<a class="nav-link" href="<?php echo site_url("login/"); ?>">Login</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="<?php echo site_url("register"); ?>">Register</a>
-							</li>
-						<?php } ?>
+						<li class="nav-item">
+							<a class="nav-link" href="<?php echo site_url("logout/"); ?>">Logout</a>
+						</li>
 					</ul>
 				</div>
 			</div>

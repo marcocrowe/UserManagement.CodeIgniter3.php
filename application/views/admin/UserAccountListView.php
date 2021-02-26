@@ -9,6 +9,9 @@
 				<th scope="col">email</th>
 				<th scope="col">Active</th>
 				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -25,6 +28,9 @@
 					<td><?php echo $userAccount->Email; ?></td>
 					<td><?php echo $userAccount->Active; ?></td>
 					<td><a href="view/<?php echo $userAccount->Id; ?>">View details</a></td>
+					<td><a href="edit/<?php echo $userAccount->Id; ?>">Edit</a></td>
+					<td><a href="password/<?php echo $userAccount->Id; ?>">Set password</a></td>
+					<td><a href="delete/<?php echo $userAccount->Id; ?>">Delete</a></td>
 				</tr>
 			<?php } ?>
 		</tbody>

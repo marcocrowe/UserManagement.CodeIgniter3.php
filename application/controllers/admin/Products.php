@@ -19,24 +19,24 @@ class Products extends CI_Controller
 			$vars = array(
 				"products" => $products
 			);
-			$this->websitemanager->loadViewWithMasterPage($title, "admin/ProductListView", $vars);
+			$this->websitemanager->loadViewWithAdminMasterPage($title, "admin/ProductListView", $vars);
 		} else {
-			$this->websitemanager->loadViewWithMasterPage($title, "error_403.php");
+			$this->websitemanager->loadAdminError403Page($title);
 		}
 	}
-	public function view($userAccountId)
+	public function view($productId)
 	{
-		$title = "User Account";
+		$title = "Products";
 		if ($this->websitemanager->isLoggedIn()) {
-			$userAccount = $this->UserAccountService->getUserAccountById($userAccountId);
+			$product = $this->ProductService->getProductById($productId);
 
 			$vars = array(
-				"userAccount" => $userAccount
+				"Product" => $product
 			);
-			$title .= ": " . $userAccount->Username;
-			$this->websitemanager->loadViewWithMasterPage($title, "UserAccountView", $vars);
+			$title .= ": " . $product->Username;
+			$this->websitemanager->loadViewWithAdminMasterPage($title, "ProductView", $vars);
 		} else {
-			$this->websitemanager->loadViewWithMasterPage($title, "error_403.php");
+			$this->websitemanager->loadAdminError403Page($title);
 		}
 	}
 }

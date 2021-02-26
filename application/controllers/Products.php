@@ -21,22 +21,22 @@ class Products extends CI_Controller
 			);
 			$this->websitemanager->loadViewWithMasterPage($title, "ProductListView", $vars);
 		} else {
-			$this->websitemanager->loadViewWithMasterPage($title, "error_403.php");
+			$this->websitemanager->loadError403Page($title);
 		}
 	}
 	public function view($userAccountId)
 	{
-		$title = "User Account";
+		$title = "Product";
 		if ($this->websitemanager->isLoggedIn()) {
-			$userAccount = $this->UserAccountService->getUserAccountById($userAccountId);
+			$product = $this->ProductService->getProductById($userAccountId);
 
 			$vars = array(
-				"userAccount" => $userAccount
+				"product" => $product
 			);
-			$title .= ": " . $userAccount->Username;
-			$this->websitemanager->loadViewWithMasterPage($title, "UserAccountView", $vars);
+			$title .= ": " . $product->Name;
+			$this->websitemanager->loadViewWithMasterPage($title, "ProductView", $vars);
 		} else {
-			$this->websitemanager->loadViewWithMasterPage($title, "error_403.php");
+			$this->websitemanager->loadError403Page($title);
 		}
 	}
 }

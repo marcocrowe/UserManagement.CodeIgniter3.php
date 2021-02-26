@@ -19,9 +19,9 @@ class UserAccounts extends CI_Controller
 			$vars = array(
 				"userAccounts" => $userAccounts
 			);
-			$this->websitemanager->loadViewWithMasterPage($title, "UserAccountListView", $vars);
+			$this->websitemanager->loadViewWithAdminMasterPage($title, "Admin/UserAccountListView", $vars);
 		} else {
-			$this->websitemanager->loadError403Page($title);
+			$this->websitemanager->loadAdminError403Page($title);
 		}
 	}
 	public function view($userAccountId)
@@ -34,9 +34,24 @@ class UserAccounts extends CI_Controller
 				"userAccount" => $userAccount
 			);
 			$title .= ": " . $userAccount->Username;
-			$this->websitemanager->loadViewWithMasterPage($title, "UserAccountView", $vars);
+			$this->websitemanager->loadViewWithAdminMasterPage($title, "UserAccountView", $vars);
 		} else {
-			$this->websitemanager->loadError403Page($title);
+			$this->websitemanager->loadAdminError403Page($title);
+		}
+	}
+	public function edit($userAccountId)
+	{
+		$title = "User Account";
+		if ($this->websitemanager->isLoggedIn()) {
+			$userAccount = $this->UserAccountService->getUserAccountById($userAccountId);
+
+			$vars = array(
+				"userAccount" => $userAccount
+			);
+			$title .= ": " . $userAccount->Username;
+			$this->websitemanager->loadViewWithAdminMasterPage($title, "UserAccountEditView", $vars);
+		} else {
+			$this->websitemanager->loadViewWithAdminMasterPage($title, "error_403.php");
 		}
 	}
 }

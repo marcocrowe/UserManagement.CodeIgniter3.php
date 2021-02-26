@@ -1,7 +1,6 @@
 <?php
 
-if (!defined('BASEPATH')) 	exit('No direct script access allowed');
-
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 //
 //	https://codeigniter.com/userguide3/general/creating_libraries.html
 //
@@ -33,6 +32,14 @@ class WebsiteManager
 	public function unauthorizedCustomerSessionDetected()
 	{
 		return $this->codeIgniterReference->session->userdata("CustomerId") == null;
+	}
+	public function loadError403Page($pageTitle)
+	{
+		$this->loadViewWithMasterPage($pageTitle, "error_403.php");
+	}
+	public function loadAdminError403Page($pageTitle)
+	{
+		$this->loadViewWithAdminMasterPage($pageTitle, "error_403.php");
 	}
 	public function loadViewWithAdminMasterPage($pageTitle, $viewName, $viewVars = null)
 	{
