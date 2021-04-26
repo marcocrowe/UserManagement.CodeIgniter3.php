@@ -14,17 +14,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($products as $product) { ?>
+			<?php foreach ($products as $product) : ?>
 				<tr>
-				<th scope="row"><?php echo $product->Id; ?></th>
-					<td><?php echo $product->Name; ?></th>
-					<td><?php echo $product->Description; ?></td>
-					<td><?php echo $product->Price; ?></td>
-					<td><?php echo $product->IsForSale == 1 ? "Yes" : "No"; ?></td>
-					<td><a href="view/<?php echo $product->Id; ?>">View details</a></td>
-					<td><a href="edit/<?php echo $product->Id; ?>">Edit</a></td>
-					<td><a href="delete/<?php echo $product->Id; ?>">Delete</a></td>
+				<th scope="row"><?= $product->Id; ?></th>
+					<td><?= $product->Name; ?></th>
+					<td><?= $product->Description; ?></td>
+					<td><?= $product->Price; ?></td>
+					<td><?= $product->IsForSale == 1 ? "Yes" : "No"; ?></td>
+					<td><a href="view/<?= $product->Id; ?>">View details</a></td>
+					<td><a href="edit/<?= $product->Id; ?>">Edit</a></td>
+					<td><a href="delete/<?= $product->Id; ?>">Delete</a></td>
 				</tr>
-			<?php } ?>
+			<?php endforeach ?>
 		</tbody>
 	</table>

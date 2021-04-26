@@ -4,5 +4,5 @@
 	<?php if (isset($unauthorizedPath)) {
 		echo "<p>" . $unauthorizedPath . "</p>";
 	} ?>
-	<p><a href="<?php echo site_url("login/"); ?>">Click here to login.</a></p>
+	<p><a href="<?= site_url("login/"); ?>">Click here to login.</a></p>
 </div>

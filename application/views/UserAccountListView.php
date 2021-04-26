@@ -12,21 +12,21 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($userAccounts as $userAccount) { ?>
+			<?php foreach ($userAccounts as $userAccount) : ?>
 				<tr>
 					<?php
 					$userHasImage = isset($userAccount->Avatar);
 					$imgAlt = $userHasImage ? $userAccount->Name : "";
 					$imgSrc = $userHasImage ? $userAccount->Avatar : "avatarblank.png";
 					?>
-					<td><img alt="<?php echo $imgAlt; ?>" height="50px" src="<?php echo $imgSrc; ?>" width="50px" /></td>
-					<th scope="row"><?php echo $userAccount->Username; ?></th>
-					<td><?php echo $userAccount->Name; ?></td>
-					<td><?php echo $userAccount->Email; ?></td>
-					<td><?php echo $userAccount->Active; ?></td>
-					<td><a href="view/<?php echo $userAccount->Id; ?>">View details</a></td>
+					<td><img alt="<?= $imgAlt; ?>" height="50px" src="<?= $imgSrc; ?>" width="50px" /></td>
+					<th scope="row"><?= $userAccount->Username; ?></th>
+					<td><?= $userAccount->Name; ?></td>
+					<td><?= $userAccount->Email; ?></td>
+					<td><?= $userAccount->Active; ?></td>
+					<td><a href="view/<?= $userAccount->Id; ?>">View details</a></td>
 				</tr>
-			<?php } ?>
+			<?php endforeach ?>
 		</tbody>
 	</table>
 </main>

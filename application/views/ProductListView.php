@@ -12,15 +12,15 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($products as $product) { ?>
+			<?php foreach ($products as $product) : ?>
 				<tr>
-					<th scope="row"><?php echo $product->Name; ?></th>
-					<td><?php echo $product->Description; ?></td>
-					<td><?php echo $product->Price; ?></td>
-					<td><a href="addtocart/<?php echo $product->Id; ?>">Add to cart</a></td>
-					<td><a href="addtowishlist/<?php echo $product->Id; ?>">Add to wishlist</a></td>
-					<td><a href="view/<?php echo $product->Id; ?>">View details</a></td>
+					<th scope="row"><?= $product->Name; ?></th>
+					<td><?= $product->Description; ?></td>
+					<td><?= $product->Price; ?></td>
+					<td><a href="addtocart/<?= $product->Id; ?>">Add to cart</a></td>
+					<td><a href="addtowishlist/<?= $product->Id; ?>">Add to wishlist</a></td>
+					<td><a href="view/<?= $product->Id; ?>">View details</a></td>
 				</tr>
-			<?php } ?>
+			<?php endforeach ?>
 		</tbody>
 	</table>

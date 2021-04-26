@@ -7,15 +7,15 @@
 				<tbody>
 					<tr>
 						<th scope="row">Name</th>
-						<td><?php echo $product->Name; ?></td>
+						<td><?= $product->Name; ?></td>
 					</tr>
 					<tr>
 						<th scope="row">Description</th>
-						<td><?php echo $product->Description; ?></td>
+						<td><?= $product->Description; ?></td>
 					</tr>
 					<tr>
 						<th scope="row">Price</th>
-						<td><?php echo $product->Price; ?></td>
+						<td><?= $product->Price; ?></td>
 					</tr>
 				</tbody>
 			</table>
